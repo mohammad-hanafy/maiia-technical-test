@@ -4,7 +4,6 @@ import com.maiia.pro.configuration.AppProperties;
 import com.maiia.pro.entity.Appointment;
 import com.maiia.pro.entity.Availability;
 import com.maiia.pro.entity.TimeSlot;
-import com.maiia.pro.exception.NotImplementedException;
 import com.maiia.pro.repository.AppointmentRepository;
 import com.maiia.pro.repository.AvailabilityRepository;
 import com.maiia.pro.repository.TimeSlotRepository;
@@ -39,7 +38,7 @@ public class ProAvailabilityService {
     }
 
     @Transactional
-    public List<Availability> generateAvailabilities(Integer practitionerId) throws NotImplementedException {
+    public List<Availability> generateAvailabilities(Integer practitionerId) {
     	// delete old availabilities
     	availabilityRepository.deleteByPractitionerId(practitionerId);
     	
